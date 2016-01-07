@@ -21,18 +21,16 @@ $( document ).ready(function() {
                   "The best time to plant a tree was 20 years ago. The second best time is now. @Chinese Proverb",
                   "An unexamined life is not worth living. @Socrates",
                   "Eighty percent of success is showing up. @Woody Allen",
- "Your time is limited, so don’t waste it living someone else’s life. @Steve Jobs",
- "Winning isn’t everything, but wanting to win is. @Vince Lombardi",
- "I am not a product of my circumstances. I am a product of my decisions. @Stephen Covey",
- "Every child is an artist.  The problem is how to remain an artist once he grows up. @Pablo Picasso",
- "You can never cross the ocean until you have the courage to lose sight of the shore. @Christopher Columbus",
- "I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. @Maya Angelou",
-
-
- "Either you run the day, or the day runs you. @Jim Rohn",
- "Whether you think you can or you think you can’t, you’re right. @Henry Ford",
- "The two most important days in your life are the day you are born and the day you find out why. @Mark Twain",
- "Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. @Johann Wolfgang von Goethe",
+                  "Your time is limited, so don’t waste it living someone else’s life. @Steve Jobs",
+                  "Winning isn’t everything, but wanting to win is. @Vince Lombardi",
+                  "I am not a product of my circumstances. I am a product of my decisions. @Stephen Covey",
+                  "Every child is an artist.  The problem is how to remain an artist once he grows up. @Pablo Picasso",
+                  "You can never cross the ocean until you have the courage to lose sight of the shore. @Christopher Columbus",
+                  "I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. @Maya Angelou",
+                  "Either you run the day, or the day runs you. @Jim Rohn",
+                  "Whether you think you can or you think you can’t, you’re right. @Henry Ford",
+                  "The two most important days in your life are the day you are born and the day you find out why. @Mark Twain",
+                  "Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. @Johann Wolfgang von Goethe",
 ];
     
     randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
