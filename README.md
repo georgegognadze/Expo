@@ -1,3 +1,3 @@
 # Expo
-######This is my expo page, I'll add small projects in future.
-First project is Random quote generator.
+######This is my expo page for small projects.
+First project is <a href="http://rgq.bitballoon.com/" target="_blank"> Random quote generator </a>.
