@@ -102,7 +102,7 @@ Those quotes are taken from this web page: http://www.forbes.com/sites/kevinkrus
                   "It’s not the years in your life that count. It’s the life in your years. @Abraham Lincoln",
                   "Change your thoughts and you change your world. @Norman Vincent Peale",
                   "Either write something worth reading or do something worth writing. @Benjamin Franklin",
-                  "Nothing is impossible, the word itself says, “I’m possible!” @Audrey Hepburn",
+                  "Nothing is impossible, the word itself says, “I’m possible!”. @Audrey Hepburn",
                   "The only way to do great work is to love what you do. @Steve Jobs",
                   "If you can dream it, you can achieve it. @Zig Ziglar",
 ];

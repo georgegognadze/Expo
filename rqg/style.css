@@ -4,7 +4,6 @@ body {
   text-align: center;
   width: 600px; 
   margin: 0px auto;
-  background-color: #cdcdcd;
   font-family: 'Tangerine', serif;
   background-image: url("pattern.png");
   padding: 50px 0px;
@@ -18,12 +17,6 @@ h1{
     margin: 10px auto;
     font-size: 4em;
     color: #6fa2c9;
-}
-
-p {
-  font-family: 'Radley', serif;
-  font-size: 1.2em;
-  text-align: left;
 }
 
 .quote {
