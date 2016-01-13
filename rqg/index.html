@@ -13,7 +13,22 @@
   ga('send', 'pageview');
 
 </script>
-
+<script type="async">window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 <h1>Random Quotes</h1>
 <br>
@@ -64,5 +79,5 @@ New Quote</button>
     }
 </style> 
 <br>
-<a href="https://twitter.com/GeorgeGognadze" class="twitter-follow-button" data-show-count="false">Follow @GeorgeGognadze</a>
+<a href="https://twitter.com/GeorgeGognadze" class="twitter-follow-button" data-show-count="true">Follow @GeorgeGognadze</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
