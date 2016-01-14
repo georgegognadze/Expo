@@ -1,5 +1,4 @@
 
-
 body {
   text-align: center;
   width: 600px; 
@@ -118,3 +117,9 @@ a {
   font-size: 12pt;
 }
 
+::selection {
+  background: #a8d1ff; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #a8d1ff; /* Gecko Browsers */
+}
