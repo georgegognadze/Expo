@@ -4,89 +4,96 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-72303550-1', 'auto');
-  ga('send', 'pageview');
-
+    ga('create', 'UA-72303550-1', 'auto');
+    ga('send', 'pageview');
 </script>
+<script type="async">window.twttr = (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function(f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));</script>
 <script type="text/javascript">
     // Log any kind of Web Intent event to Google Analytics
-// Category: "twitter_web_intents"
-// Action: Intent Event Type
-// Label: Identifier for action taken: tweet_id, screen_name/user_id, click region
- 
-// First, load the widgets.js file asynchronously
-window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
- 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));
- 
-// Define our custom event handlers
-function clickEventToAnalytics (intentEvent) {
-  if (!intentEvent) return;
-  var label = intentEvent.region;
-  pageTracker._trackEvent('twitter_web_intents', intentEvent.type, label);
-}
- 
-function tweetIntentToAnalytics (intentEvent) {
-  if (!intentEvent) return;
-  var label = "tweet";
-  pageTracker._trackEvent(
-    'twitter_web_intents',
-    intentEvent.type,
-    label
-  );
-}
- 
-function likeIntentToAnalytics (intentEvent) {
-  tweetIntentToAnalytics(intentEvent);
-}
- 
-function retweetIntentToAnalytics (intentEvent) {
-  if (!intentEvent) return;
-  var label = intentEvent.data.source_tweet_id;
-  pageTracker._trackEvent(
-    'twitter_web_intents',
-    intentEvent.type,
-    label
-  );
-}
- 
-function followIntentToAnalytics (intentEvent) {
-  if (!intentEvent) return;
-  var label = intentEvent.data.user_id + " (" + intentEvent.data.screen_name + ")";
-  pageTracker._trackEvent(
-    'twitter_web_intents',
-    intentEvent.type,
-    label
-  );
-}
- 
-// Wait for the asynchronous resources to load
-twttr.ready(function (twttr) {
-  // Now bind our custom intent events
-  twttr.events.bind('click', clickEventToAnalytics);
-  twttr.events.bind('tweet', tweetIntentToAnalytics);
-  twttr.events.bind('retweet', retweetIntentToAnalytics);
-  twttr.events.bind('like', likeIntentToAnalytics);
-  twttr.events.bind('follow', followIntentToAnalytics);
-});
+    // Category: "twitter_web_intents"
+    // Action: Intent Event Type
+    // Label: Identifier for action taken: tweet_id, screen_name/user_id, click region
+
+    // First, load the widgets.js file asynchronously
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+    // Define our custom event handlers
+    function clickEventToAnalytics(intentEvent) {
+        if (!intentEvent) return;
+        var label = intentEvent.region;
+        pageTracker._trackEvent('twitter_web_intents', intentEvent.type, label);
+    }
+
+    function tweetIntentToAnalytics(intentEvent) {
+        if (!intentEvent) return;
+        var label = "tweet";
+        pageTracker._trackEvent(
+            'twitter_web_intents',
+            intentEvent.type,
+            label
+        );
+    }
+
+    function likeIntentToAnalytics(intentEvent) {
+        tweetIntentToAnalytics(intentEvent);
+    }
+
+    function retweetIntentToAnalytics(intentEvent) {
+        if (!intentEvent) return;
+        var label = intentEvent.data.source_tweet_id;
+        pageTracker._trackEvent(
+            'twitter_web_intents',
+            intentEvent.type,
+            label
+        );
+    }
+
+    function followIntentToAnalytics(intentEvent) {
+        if (!intentEvent) return;
+        var label = intentEvent.data.user_id + " (" + intentEvent.data.screen_name + ")";
+        pageTracker._trackEvent(
+            'twitter_web_intents',
+            intentEvent.type,
+            label
+        );
+    }
+
+    // Wait for the asynchronous resources to load
+    twttr.ready(function(twttr) {
+        // Now bind our custom intent events
+        twttr.events.bind('click', clickEventToAnalytics);
+        twttr.events.bind('tweet', tweetIntentToAnalytics);
+        twttr.events.bind('retweet', retweetIntentToAnalytics);
+        twttr.events.bind('like', likeIntentToAnalytics);
+        twttr.events.bind('follow', followIntentToAnalytics);
+    });
 </script>
 
 <h1>Random Quotes</h1>
@@ -96,12 +103,21 @@ twttr.ready(function (twttr) {
 <br>
 <q>
 <div class="quote">“ <span class="saying"></span>”</q>
-    <br><span class="author"></span> 
-    <br>
-        <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://rgq.bitballoon.com/" data-text="Check out this site and get inspired" data-via="GeorgeGognadze" data-hashtags="quotes">Tweet</a>
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-        </script> 
+<br><span class="author"></span>
+<br>
+<a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://rgq.bitballoon.com/" data-text="Check out this site and get inspired" data-via="GeorgeGognadze" data-hashtags="quotes">Tweet</a>
+<script>
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+</script>
 </div>
 <a href="https://github.com/dreamtocode/Expo" class="github-corner">
     <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#538fbe; color:#fff; position: absolute; top: -668px; border: 0; right: -983px;">
@@ -114,10 +130,8 @@ twttr.ready(function (twttr) {
     .github-corner:hover .octo-arm {
         animation: octocat-wave 560ms ease-in-out
     }
-    
     @keyframes octocat-wave {
-        0%,
-        100% {
+        0%, 100% {
             transform: rotate(0)
         }
         20%,
@@ -129,8 +143,7 @@ twttr.ready(function (twttr) {
             transform: rotate(10deg)
         }
     }
-    
-    @media (max-width:500px) {
+    @media (max-width: 500px) {
         .github-corner:hover .octo-arm {
             animation: none
         }
@@ -138,7 +151,18 @@ twttr.ready(function (twttr) {
             animation: octocat-wave 560ms ease-in-out
         }
     }
-</style> 
+</style>
 <br>
 <a href="https://twitter.com/GeorgeGognadze" class="twitter-follow-button" data-show-count="true">Follow @GeorgeGognadze</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script>
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+</script>
