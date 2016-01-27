@@ -64,9 +64,9 @@
             this.aspect = camera.aspect;
             this.fov = camera.fov;
             this.updateCamera = function () {
-                camera.aspect = control.aspect;
-                
                 camera.fov = control.fov;
+                camera.aspect = control.aspect;
+
                 camera.updateProjectionMatrix();
             }
         };
@@ -96,9 +96,10 @@
     function addControls(controlObject) {
         var gui = new dat.GUI();
         gui.add(controlObject, 'rotationSpeed', -0.1, 0.1);
-        gui.add(controlObject, 'scale', 0.01, 2);        
+        gui.add(controlObject, 'scale', 0.01, 2);    
+        gui.add(controlObject, 'fov', 0, 180).onChange(control.updateCamera);    
         gui.add(controlObject, 'aspect', 0, 4).onChange(control.updateCamera);
-        gui.add(controlObject, 'fov', 0, 180).onChange(control.updateCamera);
+        
     }
 
     function setupKeyLogger() {
