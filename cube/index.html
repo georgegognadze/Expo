@@ -29,6 +29,8 @@
         // create a camera, which defines where we're looking at.
         // camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera = new THREE.PerspectiveCamera();
+        // Camera frustum vertical field of view, from bottom to top of view, in degrees.
+        camera.fov = 45;
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
@@ -60,9 +62,11 @@
             this.rotationSpeed = 0.005;
             this.scale = 1;
             this.aspect = camera.aspect;
+            this.fov = camera.fov;
             this.updateCamera = function () {
                 camera.aspect = control.aspect;
-
+                
+                camera.fov = control.fov;
                 camera.updateProjectionMatrix();
             }
         };
@@ -94,6 +98,7 @@
         gui.add(controlObject, 'rotationSpeed', -0.1, 0.1);
         gui.add(controlObject, 'scale', 0.01, 2);        
         gui.add(controlObject, 'aspect', 0, 4).onChange(control.updateCamera);
+        gui.add(controlObject, 'fov', 0, 180).onChange(control.updateCamera);
     }
 
     function setupKeyLogger() {
