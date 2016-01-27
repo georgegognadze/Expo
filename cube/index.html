@@ -32,6 +32,8 @@
         // Camera frustum vertical field of view, from bottom to top of view, in degrees.
         camera.fov = 45;
         camera.aspect = window.innerWidth / window.innerHeight;
+        // Camera frustum near plane.
+        camera.near = 0.1;
         camera.updateProjectionMatrix();
 
         // create a render, sets the background color and the size
@@ -63,9 +65,11 @@
             this.scale = 1;
             this.aspect = camera.aspect;
             this.fov = camera.fov;
+            this.near = camera.near;
             this.updateCamera = function () {
                 camera.fov = control.fov;
                 camera.aspect = control.aspect;
+                camera.near = control.near;
 
                 camera.updateProjectionMatrix();
             }
@@ -99,6 +103,7 @@
         gui.add(controlObject, 'scale', 0.01, 2);    
         gui.add(controlObject, 'fov', 0, 180).onChange(control.updateCamera);    
         gui.add(controlObject, 'aspect', 0, 4).onChange(control.updateCamera);
+        gui.add(controlObject, 'near', 0, 40).onChange(control.updateCamera);
         
     }
 
