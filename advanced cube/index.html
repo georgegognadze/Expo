@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Control Cube Advanced</title>
-    <script src="js/three.js"></script>
-    <script src="js/dat.gui.min.js"></script>
-    <script src="js/stats.min.js"></script>
-    <script src="js/CCapture.min.js"></script>
-    <script src="js/Whammy.js"></script>
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/dat.gui.min.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
+    <script type="text/javascript" src="js/CCapture.min.js"></script>
+    <script type="text/javascript" src="js/Whammy.js"></script>
+    <script type="text/javascript" src="js/FullScreen.js"></script>  
     <style>
         body {
 
@@ -16,6 +17,7 @@
     </style>
 </head>
 <script>
+
 
     // global variables
     var renderer;
@@ -132,5 +134,23 @@
   ga('send', 'pageview');
 
 </script>
+<script>
+        document.querySelector(".available .value").innerHTML   = THREEx.FullScreen.available() ? "yes" : "no";
+        document.querySelector(".activated .value").innerHTML   = THREEx.FullScreen.activated() ? "yes" : "no";
+
+        THREEx.FullScreen.bindKey({
+            dblclick    : true
+        });
+        
+        document.querySelector(".button.request").addEventListener('click', function(){
+            THREEx.FullScreen.request();
+            document.querySelector(".activated .value").innerHTML   = THREEx.FullScreen.activated() ? "yes" : "no";
+        }, false);
+
+        document.querySelector(".button.cancel").addEventListener('click', function(){
+            THREEx.FullScreen.cancel();
+            document.querySelector(".activated .value").innerHTML   = THREEx.FullScreen.activated() ? "yes" : "no";
+        }, false);
+    </script>
 </body>
 </html>
