@@ -7,19 +7,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" />
 		<link href="src/css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 
 	<body>
 
-		<a class="back"></a>
+		<a class="back" <i class="fa fa-arrow-circle-o-up fa-2x"></i>></a>
 
 		<div id="stage">
 
 			<div id="step1">
 				<div class="content">
 					<h1>What do you want to do?</h1>
-					<a class="button encrypt green">Encrypt a file</a>
-					<a class="button decrypt magenta">Decrypt a file</a>
+					<a class="button encrypt green"><i class="fa fa-lock fa-2x" style="margin-left: -50px"></i> Encrypt a file</a>
+
+					<a class="button decrypt magenta"><i class="fa fa-unlock-alt fa-2x" style="margin-left: -50px"></i> Decrypt a file</a>
 				</div>
 			</div>
 
@@ -28,7 +30,7 @@
 				<div class="content if-encrypt">
 					<h1>Choose which file to encrypt</h1>
 					<h2>An encrypted copy of the file will be generated. No data is sent to our server.</h2>
-					<a class="button browse blue">Browse</a>
+					<a class="button browse blue"><i class="fa fa-folder-o fa-2x" style="margin-left: -50px"></i> Browse</a>
 
 					<input type="file" id="encrypt-input" />
 				</div>
@@ -36,7 +38,7 @@
 				<div class="content if-decrypt">
 					<h1>Choose which file to decrypt</h1>
 					<h2>Only files encrypted by this tool are accepted.</h2>
-					<a class="button browse blue">Browse</a>
+					<a class="button browse blue"><i class="fa fa-folder-o fa-2x" style="margin-left: -50px"></i> Browse</a>
 
 					<input type="file" id="decrypt-input" />
 				</div>
@@ -50,7 +52,7 @@
 					<h2>This phrase will be used as an encryption key. Write it down or remember it; you won't be able to restore the file without it. </h2>
 
 					<input type="password" />
-					<a class="button process red">Encrypt!</a>
+					<a class="button process red"><i class="fa fa-lock fa-2x" style="margin-left: -50px"></i> Encrypt!</a>
 				</div>
 
 				<div class="content if-decrypt">
@@ -58,7 +60,7 @@
 					<h2>Enter the pass phrase that was used to encrypt this file. It is not possible to decrypt it without it.</h2>
 
 					<input type="password" />
-					<a class="button process red">Decrypt!</a>
+					<a class="button process red"><i class="fa fa-unlock-alt fa-2x" style="margin-left: -50px"></i> Decrypt!</a>
 				</div>
 
 			</div>
@@ -67,7 +69,7 @@
 
 				<div class="content">
 					<h1>Your file is ready!</h1>
-					<a class="button download green">Download</a>
+					<a class="button download green"><i class="fa fa-download fa-2x" style="margin-left: -50px"></i> Download</a>
 				</div>
 
 			</div>
