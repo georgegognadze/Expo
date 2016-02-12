@@ -114,7 +114,7 @@
             }
         };
     }
-    
+
     function render() {
         renderer.render(scene, camera);
         scene.getObjectByName('cube').rotation.x += control.rotationSpeed;
@@ -126,8 +126,17 @@
         requestAnimationFrame(render);
     }
 
+    function onResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
     // calls the init function when the window is done loading.
     window.onload = init;
+
+    // listen to the resize events
+    window.addEventListener('resize', onResize, false);
 
 </script>
 <body>
