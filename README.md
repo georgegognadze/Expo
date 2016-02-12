@@ -5,4 +5,4 @@
 3) <a href="http://advancedcube.bitballoon.com/" target="_blank"> Advanced Cube </a> experiment using Three.js and WebGL. <br>
 4) <a href="http://fileencription.bitballoon.com/" target="_blank"> File encription </a> encript your files for free using CryptoJS. <br>
 5) <a href="http://canvas.bitballoon.com/" target="_blank"> Canvas </a> as textures. <br>
-More projects coming soon as time goes by.
+More projects coming soon as time goes by :octocat:
