@@ -65,6 +65,8 @@
         };
         addControls(control);
 
+        // setupKeyLogger();
+        setupKeyControls();
 
         // call the render function
         render();
@@ -87,6 +89,32 @@
         gui.add(controlObject, 'scale', 0.01, 2);
     }
 
+     function setupKeyLogger() {
+        document.onkeydown = function (e) {
+            console.log(e);
+        }
+    }
+
+    function setupKeyControls() {
+        var cube = scene.getObjectByName('cube');
+        document.onkeydown = function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    cube.rotation.x += 0.2;
+                    break;
+                case 38:
+                    cube.rotation.z -= 0.2;
+                    break;
+                case 39:
+                    cube.rotation.x -= 0.2;
+                    break;
+                case 40:
+                    cube.rotation.z += 0.2;
+                    break;
+            }
+        };
+    }
+    
     function render() {
         renderer.render(scene, camera);
         scene.getObjectByName('cube').rotation.x += control.rotationSpeed;
