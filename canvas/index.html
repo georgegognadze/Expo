@@ -5,6 +5,7 @@
     <script type="text/javascript" src="js/three.js"></script>
     <script type="text/javascript" src="js/dat.gui.min.js"></script>
     <script type="text/javascript" src="js/clock.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -20,6 +21,7 @@
     var renderer;
     var scene;
     var camera;
+    var stats;
 
     var control;
 
@@ -65,11 +67,26 @@
         };
         addControls(control);
 
+        // create the stats
+        stats = createStats();
+        document.body.appendChild(stats.domElement);
+
         // setupKeyLogger();
         setupKeyControls();
 
         // call the render function
         render();
+    }
+
+    function createStats() {
+        var stats = new Stats();
+        stats.setMode(0);
+
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+
+        return stats;
     }
 
     function setupCanvas() {
@@ -122,6 +139,8 @@
         scene.getObjectByName('cube').rotation.z += control.rotationSpeed;
         scene.getObjectByName('cube').scale.set(control.scale, control.scale, control.scale);
 
+        stats.update();
+        
         scene.getObjectByName('cube').material.map.needsUpdate = true;
         requestAnimationFrame(render);
     }
