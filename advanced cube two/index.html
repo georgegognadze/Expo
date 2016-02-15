@@ -94,6 +94,21 @@
                 cube.geometry.verticesNeedUpdate = true;
             }
 
+            this.doShearing = function () {
+
+                var scaleMatrix = new THREE.Matrix4();
+                scaleMatrix.set(
+                        1, this.a, this.b, 0,
+                        this.c, 1, this.d, 0,
+                        this.e, this.f, 1, 0,
+                        0, 0, 0, 1
+                );
+
+
+                cube.geometry.applyMatrix(scaleMatrix);
+                cube.geometry.verticesNeedUpdate = true;
+            }
+
             
         };
         addControls(control);
@@ -118,6 +133,8 @@
         gui.add(controlObject, 'd', -5, 5).step(0.1);
         gui.add(controlObject, 'e', -5, 5).step(0.1);
         gui.add(controlObject, 'f', -5, 5).step(0.1);
+
+        gui.add(controlObject, 'doShearing');
     }
 
     function render() {
