@@ -64,6 +64,9 @@
             this.e = 0.1;
             this.f = 0.1;
 
+            this.theta = 0.1;
+
+
             this.doTranslation = function () {
                 // other way with helper function provided by three.js
                 // new THREE.Matrix4().makeTranslation(3,3,3);
@@ -135,6 +138,8 @@
         gui.add(controlObject, 'f', -5, 5).step(0.1);
 
         gui.add(controlObject, 'doShearing');
+
+        gui.add(controlObject, 'theta', -Math.PI, Math.PI).step(0.1);
     }
 
     function render() {
