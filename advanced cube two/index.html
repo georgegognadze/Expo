@@ -112,6 +112,20 @@
                 cube.geometry.verticesNeedUpdate = true;
             }
 
+            this.doRotationY = function () {
+                var c = Math.cos(this.theta), s = Math.sin(this.theta);
+
+                var rotationMatrix = new THREE.Matrix4();
+                rotationMatrix.set(
+                        c, 0, s, 0,
+                        0, 1, 0, 0,
+                        -s, 0, c, 0,
+                        0, 0, 0, 1
+                );
+
+                cube.geometry.applyMatrix(rotationMatrix);
+                cube.geometry.verticesNeedUpdate = true;
+            }
             
         };
         addControls(control);
@@ -140,6 +154,7 @@
         gui.add(controlObject, 'doShearing');
 
         gui.add(controlObject, 'theta', -Math.PI, Math.PI).step(0.1);
+        gui.add(controlObject, 'doRotationY');        
     }
 
     function render() {
