@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Control Cube Advanced two</title>
     <script type="text/javascript" src="js/three.js"></script>
@@ -12,7 +13,6 @@
     </style>
 </head>
 <script>
-
     // global variables
     var renderer;
     var scene;
@@ -50,7 +50,7 @@
         // add the output of the renderer to the html element
         document.body.appendChild(renderer.domElement);
 
-        control = new function () {
+        control = new function() {
             this.rotationSpeed = 0.01;
             this.scale = 1;
             this.x = 0.1;
@@ -67,15 +67,15 @@
             this.theta = 0.1;
 
 
-            this.doTranslation = function () {
+            this.doTranslation = function() {
                 // other way with helper function provided by three.js
                 // new THREE.Matrix4().makeTranslation(3,3,3);
                 var translationMatrix = new THREE.Matrix4();
                 translationMatrix.set(
-                        1, 0, 0, control.x,
-                        0, 1, 0, control.y,
-                        0, 0, 1, control.z,
-                        0, 0, 0, 1
+                    1, 0, 0, control.x,
+                    0, 1, 0, control.y,
+                    0, 0, 1, control.z,
+                    0, 0, 0, 1
                 );
                 cube.applyMatrix(translationMatrix);
 
@@ -84,27 +84,27 @@
                 // cube.geometry.verticesNeedUpdate = true;
             }
 
-            this.doScale = function () {
+            this.doScale = function() {
                 var scaleMatrix = new THREE.Matrix4();
                 scaleMatrix.set(
-                        control.x, 0, 0, 0,
-                        0, control.y, 0, 0,
-                        0, 0, control.z, 0,
-                        0, 0, 0, 1
+                    control.x, 0, 0, 0,
+                    0, control.y, 0, 0,
+                    0, 0, control.z, 0,
+                    0, 0, 0, 1
                 );
 
                 cube.geometry.applyMatrix(scaleMatrix);
                 cube.geometry.verticesNeedUpdate = true;
             }
 
-            this.doShearing = function () {
+            this.doShearing = function() {
 
                 var scaleMatrix = new THREE.Matrix4();
                 scaleMatrix.set(
-                        1, this.a, this.b, 0,
-                        this.c, 1, this.d, 0,
-                        this.e, this.f, 1, 0,
-                        0, 0, 0, 1
+                    1, this.a, this.b, 0,
+                    this.c, 1, this.d, 0,
+                    this.e, this.f, 1, 0,
+                    0, 0, 0, 1
                 );
 
 
@@ -112,21 +112,21 @@
                 cube.geometry.verticesNeedUpdate = true;
             }
 
-            this.doRotationY = function () {
-                var c = Math.cos(this.theta), s = Math.sin(this.theta);
+            this.doRotationY = function() {
+                var c = Math.cos(this.theta),
+                    s = Math.sin(this.theta);
 
                 var rotationMatrix = new THREE.Matrix4();
                 rotationMatrix.set(
-                        c, 0, s, 0,
-                        0, 1, 0, 0,
-                        -s, 0, c, 0,
-                        0, 0, 0, 1
+                    c, 0, s, 0,
+                    0, 1, 0, 0, -s, 0, c, 0,
+                    0, 0, 0, 1
                 );
 
                 cube.geometry.applyMatrix(rotationMatrix);
                 cube.geometry.verticesNeedUpdate = true;
             }
-            
+
         };
         addControls(control);
 
@@ -157,10 +157,10 @@
         gui.add(controlObject, 'doShearing');
 
         gui.add(controlObject, 'theta', -Math.PI, Math.PI).step(0.1);
-        gui.add(controlObject, 'doRotationY');        
+        gui.add(controlObject, 'doRotationY');
     }
 
-        function setupKeyLogger() {
+    function setupKeyLogger() {
         document.onkeydown = function(e) {
             console.log(e);
         }
@@ -205,17 +205,25 @@
 
     // listen to the resize events
     window.addEventListener('resize', onResize, false);
-
 </script>
+
 <body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-73919542-1', 'auto');
-  ga('send', 'pageview');
-</script>
+        ga('create', 'UA-73919542-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
+
 </html>
