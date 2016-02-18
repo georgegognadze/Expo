@@ -6,4 +6,5 @@
 4) <a href="http://fileencription.bitballoon.com/" target="_blank"> File encription </a> encript your files for free using CryptoJS. <br>
 5) <a href="http://canvas.bitballoon.com/" target="_blank"> Canvas </a> as textures. <br>
 6) <a href="http://advcubtwo.bitballoon.com/" target="_blank"> Advanced Cube two </a> using Three.js <br> 
+7) Text in 3D. <br>
 More projects coming soon as time goes by :octocat:
