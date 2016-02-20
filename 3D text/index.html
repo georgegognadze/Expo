@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>3D Text</title>
     <script type="text/javascript" src="js/three.js"></script>
@@ -24,7 +25,6 @@
     </style>
 </head>
 <script>
-
     // global variables
     var renderer;
     var scene;
@@ -68,7 +68,7 @@
         // add the output of the renderer to the html element
         document.body.appendChild(renderer.domElement);
 
-        control = new function () {
+        control = new function() {
             this.bevelEnabled = false;
             this.bevelThickness = 8;
             this.bevelSize = 4;
@@ -149,8 +149,14 @@
         textGeo.computeVertexNormals();
 
         var material = new THREE.MeshFaceMaterial([
-            new THREE.MeshPhongMaterial({color: 0xff22cc, shading: THREE.FlatShading}), // front
-            new THREE.MeshPhongMaterial({color: 0xff22cc, shading: THREE.SmoothShading}) // side
+            new THREE.MeshPhongMaterial({
+                color: 0xff22cc,
+                shading: THREE.FlatShading
+            }), // front
+            new THREE.MeshPhongMaterial({
+                color: 0xff22cc,
+                shading: THREE.SmoothShading
+            }) // side
         ]);
 
         var textMesh = new THREE.Mesh(textGeo, material);
@@ -169,8 +175,9 @@
 
     // calls the init function when the window is done loading.
     window.onload = init;
-
 </script>
+
 <body>
 </body>
+
 </html>
