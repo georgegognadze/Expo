@@ -76,11 +76,11 @@
         gui.add(controls, 'vertexColors').onChange(controls.redraw);
         gui.addColor(controls, 'color').onChange(controls.redraw);
         gui.add(controls, 'sizeAttenuation').onChange(controls.redraw);
-        
+
         controls.redraw();
         render();
 
-        function createParticles(size, transparent, opacity, vertexColors, color) {
+        function createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
 
             var geom = new THREE.Geometry();
@@ -90,6 +90,7 @@
                 opacity: opacity,
                 vertexColors: vertexColors,
 
+                sizeAttenuation: sizeAttenuation,
                 color: color});
 
 
