@@ -78,6 +78,7 @@
         gui.add(controls, 'vertexColors').onChange(controls.redraw);
         gui.addColor(controls, 'color').onChange(controls.redraw);
         gui.add(controls, 'sizeAttenuation').onChange(controls.redraw);
+        gui.add(controls, 'rotateSystem');
 
         controls.redraw();
         render();
