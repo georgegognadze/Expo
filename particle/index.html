@@ -119,6 +119,12 @@
 
             stats.update();
 
+            if (controls.rotateSystem) {
+                step += 0.01;
+
+                system.rotation.x = step;
+                
+            }
 
             requestAnimationFrame(render);
             webGLRenderer.render(scene, camera);
