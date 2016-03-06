@@ -17,6 +17,7 @@
     var renderer;
     var scene;
     var camera;
+    var control;
 
     /**
      * Initializes the scene, camera and objects. Called when the window is
@@ -81,6 +82,12 @@
 
         scene.add(spotLight);
 
+        // setup the control object for the control gui
+        control = new function () {
+            this.rotationSpeed = 0.005;
+        }
+        addControlGui(control);
+
         // add the output of the renderer to the html element
         document.body.appendChild(renderer.domElement);
 
@@ -89,11 +96,21 @@
         render();
     }
 
+    function addControlGui(controlObject) {
+        var gui = new dat.GUI();
+        gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
+    }
+
     /**
      * Called when the scene needs to be rendered. Delegates to requestAnimationFrame
      * for future renders
      */
     function render() {
+        // update the camera
+        var rotSpeed = control.rotationSpeed;
+        camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
+        camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
+        
         // render using requestAnimationFrame
         requestAnimationFrame(render);
         renderer.render(scene, camera);
