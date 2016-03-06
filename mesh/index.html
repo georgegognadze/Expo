@@ -56,13 +56,10 @@
 
         // create a cube
         var cubeGeometry = new THREE.BoxGeometry(6, 4, 6);
-        var cubeMaterial = new THREE.MeshLambertMaterial({
-            color: 'red'
-        });
+        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000, transparent:true, opacity:0.6});
         var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-
+        cube.name='cube';
         cube.castShadow = true;
-
 
         // add the cube to the scene
         scene.add(cube);
@@ -110,7 +107,8 @@
         var rotSpeed = control.rotationSpeed;
         camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
         camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
-        
+        camera.lookAt(scene.position);
+
         // render using requestAnimationFrame
         requestAnimationFrame(render);
         renderer.render(scene, camera);
