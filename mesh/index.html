@@ -83,6 +83,7 @@
         // setup the control object for the control gui
         control = new function() {
             this.rotationSpeed = 0.005;
+            this.opacity = 0.6;
         }
         addControlGui(control);
 
@@ -110,6 +111,9 @@
         camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
         camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
         camera.lookAt(scene.position);
+
+        // change opacity
+        scene.getObjectByName('cube').material.opacity = control.opacity;
 
         // render using requestAnimationFrame
         requestAnimationFrame(render);
