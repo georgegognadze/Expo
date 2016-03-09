@@ -57,9 +57,13 @@
 
         // create a cube
         var cubeGeometry = new THREE.BoxGeometry(6, 4, 6);
-        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000, transparent:true, opacity:0.6});
+        var cubeMaterial = new THREE.MeshLambertMaterial({
+            color: 0xff0000,
+            transparent: true,
+            opacity: 0.6
+        });
         var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-        cube.name='cube';
+        cube.name = 'cube';
         cube.castShadow = true;
 
         // add the cube to the scene
@@ -108,14 +112,14 @@
     }
 
     function setupKeyLogger() {
-        document.onkeydown = function (e) {
+        document.onkeydown = function(e) {
             console.log(e);
         }
     }
 
     function setupKeyControls() {
         var cube = scene.getObjectByName('cube');
-        document.onkeydown = function (e) {
+        document.onkeydown = function(e) {
             switch (e.keyCode) {
                 case 37:
                     cube.rotation.x += 0.2;
