@@ -120,7 +120,7 @@
 
         return stats;
     }
-    
+
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
         gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
@@ -165,6 +165,8 @@
         camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
         camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
         camera.lookAt(scene.position);
+
+        stats.update();
         
         // change opacity
         scene.getObjectByName('cube').material.opacity = control.opacity;
