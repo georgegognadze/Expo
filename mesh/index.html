@@ -19,6 +19,7 @@
     var renderer;
     var scene;
     var camera;
+    var stats;
     var control;
 
     /**
@@ -99,12 +100,27 @@
         // setupKeyLogger();
         setupKeyControls();
 
+        // create the stats
+        stats = createStats();
+        document.body.appendChild(stats.domElement);
+
 
         // call the render function, after the first render, interval is determined
         // by requestAnimationFrame
         render();
     }
 
+    function createStats() {
+        var stats = new Stats();
+        stats.setMode(0);
+
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+
+        return stats;
+    }
+    
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
         gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
@@ -149,7 +165,7 @@
         camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
         camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
         camera.lookAt(scene.position);
-
+        
         // change opacity
         scene.getObjectByName('cube').material.opacity = control.opacity;
 
