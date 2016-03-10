@@ -1,5 +1,5 @@
 ### Expo
-######This expo page is for my small projects and experiments (for best results open in chrome)
+######This is the expo page where I do what I love the most experiments and small projects on the web. &nbsp; (for best results open in chrome)
 <ol>
 <li> <a href="http://rgq.bitballoon.com/" target="_blank"> Random quote generator</a> - generate random quotes </li>
 <li> <a href="http://controlcube.bitballoon.com/" target="_blank"> Control Cube</a> - experiment using Three.js and WebGL </li>
