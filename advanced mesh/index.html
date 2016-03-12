@@ -117,6 +117,13 @@
         guiScale.add(controls,'scaleY',0,5);
         guiScale.add(controls,'scaleZ',0,5);
 
+        guiTranslate = gui.addFolder('translate');
+
+        guiTranslate.add(controls,'translateX',-10,10);
+        guiTranslate.add(controls,'translateY',-10,10);
+        guiTranslate.add(controls,'translateZ',-10,10);
+        guiTranslate.add(controls,'translate');
+
         render();
 
         function render() {
