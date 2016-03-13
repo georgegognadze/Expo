@@ -122,6 +122,11 @@
         guiScale.add(controls,'scaleY',0,5);
         guiScale.add(controls,'scaleZ',0,5);
 
+        guiPosition = gui.addFolder('position');
+        var contX = guiPosition.add(controls,'positionX',-10,10);
+        var contY = guiPosition.add(controls,'positionY',-4,20);
+        var contZ = guiPosition.add(controls,'positionZ',-10,10);
+
         guiTranslate = gui.addFolder('translate');
 
         guiTranslate.add(controls,'translateX',-10,10);
