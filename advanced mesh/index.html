@@ -151,6 +151,12 @@
 
         render();
 
+        function onResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
         function render() {
             stats.update();
 
@@ -161,7 +167,8 @@
             requestAnimationFrame(render);
             renderer.render(scene, camera);
         }
-
+// listen to the resize events
+    window.addEventListener('resize', onResize, false);
         function initStats() {
 
             var stats = new Stats();
