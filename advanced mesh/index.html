@@ -146,6 +146,12 @@
             cube.position.z=controls.positionZ;
         });
 
+        guiRotation = gui.addFolder('rotation');
+        guiRotation.add(controls,'rotationX',-4,4);
+        guiRotation.add(controls,'rotationY',-4,4);
+        guiRotation.add(controls,'rotationZ',-4,4);
+
+
         guiTranslate = gui.addFolder('translate');
 
         guiTranslate.add(controls,'translateX',-10,10);
