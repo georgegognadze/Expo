@@ -10,6 +10,6 @@
 <li> <a href="http://3dtext.bitballoon.com/" target="_blank">3D Text</a> - using Three.js </li>
 <li> <a href="http://particle.bitballoon.com/" target="_blank"> Particle</a> - using Three.js  </li> 
 <li><a href="http://mesh.bitballoon.com/" target="_blank"> Mesh</a> - using Three.js  </li>  
-<li><a> Mesh advanced</a> - using Three.js  </li> 
+<li><a href="http://advancedmesh.bitballoon.com/" target="_blank"> Advanced Mesh</a> - using Three.js  </li> 
 </ol>
 More projects coming soon as time goes by :octocat:
