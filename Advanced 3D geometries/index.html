@@ -47,6 +47,33 @@
         camera.position.y = 40;
         camera.position.z = 50;
         camera.lookAt(new THREE.Vector3(10, 0, 0));
+
+        // add the output of the renderer to the html element
+        $("#WebGL-output").append(webGLRenderer.domElement);
+
+        // call the render function
+        var step = 0;
+
+        // the points group
+        var spGroup;
+        // the mesh
+        var hullMesh;
+
+        generatePoints();
+
+        // setup the control gui
+        var controls = new function () {
+            // we need the first child, since it's a multimaterial
+
+            this.redraw = function () {
+                scene.remove(spGroup);
+                scene.remove(hullMesh);
+                generatePoints();
+
+            };
+
+        }
+        
     });
 
 
