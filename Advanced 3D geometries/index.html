@@ -104,7 +104,11 @@
             });
             // add the points as a group to the scene
             scene.add(spGroup);
-        
+            
+            // use the same points to create a convexgeometry
+            var hullGeometry = new THREE.ConvexGeometry(points);
+            hullMesh = createMesh(hullGeometry);
+            scene.add(hullMesh);
     });
 
 
