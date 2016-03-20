@@ -92,6 +92,16 @@
 
                 points.push(new THREE.Vector3(randomX, randomY, randomZ));
             }
+
+            spGroup = new THREE.Object3D();
+            var material = new THREE.MeshBasicMaterial({color: 0xff0000, transparent: false});
+            points.forEach(function (point) {
+
+                var spGeom = new THREE.SphereGeometry(0.2);
+                var spMesh = new THREE.Mesh(spGeom, material);
+                spMesh.position = point;
+                spGroup.add(spMesh);
+            });
         
     });
 
