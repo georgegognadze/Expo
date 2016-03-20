@@ -110,7 +110,7 @@
             hullMesh = createMesh(hullGeometry);
             scene.add(hullMesh);
         }
-        
+
         function createMesh(geom) {
 
             // assign two materials
@@ -123,6 +123,17 @@
             var mesh = THREE.SceneUtils.createMultiMaterialObject(geom, [meshMaterial, wireFrameMat]);
 
             return mesh;
+        }
+
+        function render() {
+            stats.update();
+
+            spGroup.rotation.y = step;
+            hullMesh.rotation.y = step += 0.01;
+
+            // render using requestAnimationFrame
+            requestAnimationFrame(render);
+            webGLRenderer.render(scene, camera);
         }
     });
 
