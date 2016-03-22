@@ -68,7 +68,7 @@
         var controls = new function () {
             // we need the first child, since it's a multimaterial
 
-            this.redraw = function () {
+            this.generate = function () {
                 scene.remove(spGroup);
                 scene.remove(hullMesh);
                 generatePoints();
@@ -79,7 +79,7 @@
 
 
         var gui = new dat.GUI();
-        gui.add(controls, 'redraw');
+        gui.add(controls, 'generate');
 
 
         render();
