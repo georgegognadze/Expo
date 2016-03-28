@@ -58,6 +58,11 @@
         // add the plane to the scene
         scene.add(plane);
 
+        // position and point the camera to the center of the scene
+        camera.position.x = -30;
+        camera.position.y = 40;
+        camera.position.z = 30;
+        camera.lookAt(scene.position);
         
     }
     window.onload = init
