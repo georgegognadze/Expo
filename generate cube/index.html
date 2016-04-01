@@ -103,6 +103,12 @@
                 cube.castShadow = true;
                 cube.name = "cube-" + scene.children.length;
 
+                // position the cube randomly in the scene
+
+                cube.position.x = -30 + Math.round((Math.random() * planeGeometry.parameters.width));
+                cube.position.y = Math.round((Math.random() * 5));
+                cube.position.z = -20 + Math.round((Math.random() * planeGeometry.parameters.height));
+
     }
     window.onload = init
 
