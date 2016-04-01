@@ -109,12 +109,18 @@
                 cube.position.y = Math.round((Math.random() * 5));
                 cube.position.z = -20 + Math.round((Math.random() * planeGeometry.parameters.height));
 
-                
+
                 // add the cube to the scene
                 scene.add(cube);
                 this.numberOfObjects = scene.children.length;
 
-    }
+            }; 
+
+            this.outputObjects = function () {
+                console.log(scene.children);
+            }
+
+    };
     window.onload = init
 
 
