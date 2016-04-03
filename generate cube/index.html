@@ -5,6 +5,7 @@
 <head>
     <title>Generate Cube</title>
     <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
     <style>
         body {
             /* set margin to 0 and overflow to hidden, to go fullscreen */
@@ -145,7 +146,7 @@
             });
 
 
-            
+
             // render using requestAnimationFrame
             requestAnimationFrame(render);
             renderer.render(scene, camera);
