@@ -130,6 +130,20 @@
         gui.add(controls, 'numberOfObjects').listen();
 
         render();
+
+        function render() {
+            stats.update();
+
+            // rotate the cubes around its axes
+            scene.traverse(function (e) {
+                if (e instanceof THREE.Mesh && e != plane) {
+
+                    e.rotation.x += controls.rotationSpeed;
+                    e.rotation.y += controls.rotationSpeed;
+                    e.rotation.z += controls.rotationSpeed;
+                }
+            });
+
     
     window.onload = init
 
