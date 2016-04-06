@@ -173,16 +173,16 @@
                     return stats;
                 }
             }
-        function onResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }
+
+            function onResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
             window.onload = init
 
-        // listen to the resize events
-        window.addEventListener('resize', onResize, false);
-        
+            // listen to the resize events
+            window.addEventListener('resize', onResize, false);
         </script>
         <script>
             (function(i, s, o, g, r, a, m) {
