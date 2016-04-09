@@ -64,7 +64,10 @@
         var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
         var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
         cube.castShadow = true;
-        
+
+        // add the cube to the scene
+        scene.add(cube);
+
 </script>
 </body>
 </html>
