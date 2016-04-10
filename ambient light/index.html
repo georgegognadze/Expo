@@ -81,6 +81,12 @@
         // add the sphere to the scene
         scene.add(sphere);
 
+        // position and point the camera to the center of the scene
+        camera.position.x = -25;
+        camera.position.y = 30;
+        camera.position.z = 25;
+        camera.lookAt(new THREE.Vector3(10, 0, 0));
+
 </script>
 </body>
 </html>
