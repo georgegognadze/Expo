@@ -72,6 +72,11 @@
         var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
         var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
+        // position the sphere
+        sphere.position.x = 20;
+        sphere.position.y = 0;
+        sphere.position.z = 2;
+        sphere.castShadow = true;
 
 </script>
 </body>
