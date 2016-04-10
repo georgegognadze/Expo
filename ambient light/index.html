@@ -87,6 +87,10 @@
         camera.position.z = 25;
         camera.lookAt(new THREE.Vector3(10, 0, 0));
 
+        // add subtle ambient lighting
+        var ambiColor = "#0c0c0c";
+        var ambientLight = new THREE.AmbientLight(ambiColor);
+
 </script>
 </body>
 </html>
