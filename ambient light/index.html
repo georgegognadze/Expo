@@ -92,6 +92,10 @@
         var ambientLight = new THREE.AmbientLight(ambiColor);
         scene.add(ambientLight);
 
+        // add spotlight for the shadows
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, -10);
+
 
 </script>
 </body>
