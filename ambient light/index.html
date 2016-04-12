@@ -98,6 +98,9 @@
         spotLight.castShadow = true;
         scene.add(spotLight);
 
+        // add the output of the renderer to the html element
+        document.getElementById("WebGL-output").appendChild(renderer.domElement);
+
 
 </script>
 </body>
