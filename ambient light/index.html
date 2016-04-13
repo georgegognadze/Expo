@@ -118,6 +118,16 @@
 
         render();
 
+        function render() {
+
+        stats.update();
+
+        // rotate the cube around its axes
+        cube.rotation.x += controls.rotationSpeed;
+        cube.rotation.y += controls.rotationSpeed;
+        cube.rotation.z += controls.rotationSpeed;
+    	}
+
 </script>
 </body>
 </html>
