@@ -24,6 +24,19 @@
     var stats;
 
     var isTweening = false;
+
+    function createCube() {
+
+        var cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
+        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000, transparent: true, opacity: 0.6});
+        var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.castShadow = true;
+        cube.name = 'cube';
+        cube.position = new THREE.Vector3(2, 2, 0);
+        scene.add(cube);
+        return cube;
+    }
+    
 </script>
 <body>
 </body>
