@@ -53,6 +53,13 @@
         renderer.setClearColor(0x000000, 1.0);
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMapEnabled = true;
+
+        // create the ground plane
+        var planeGeometry = new THREE.PlaneGeometry(120, 120, 20, 20);
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.receiveShadow = true;
+    }
 </script>
 <body>
 </body>
