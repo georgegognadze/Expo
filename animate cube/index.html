@@ -83,8 +83,14 @@
         spotLight.shadowCameraFar = 150;
         spotLight.castShadow = true;
 
-        
+
         scene.add(spotLight);
+
+        // setup the control object for the control gui
+        control = new function () {
+            this.rotationSpeed = 0.005;
+            this.opacity = 0.6;
+            this.color = cube.material.color.getHex();
     }
 </script>
 <body>
