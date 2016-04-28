@@ -95,6 +95,11 @@
             this.forward = function () {
                 takeStepForward(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
             };
+
+            this.back = function () {
+                takeStepBackward(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
+            };
+
     }
 </script>
 <body>
