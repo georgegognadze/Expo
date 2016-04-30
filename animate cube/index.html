@@ -116,6 +116,10 @@
         // add the output of the renderer to the html element
         document.body.appendChild(renderer.domElement);
 
+        // call the render function, after the first render, interval is determined
+        // by requestAnimationFrame
+        render();
+
     }
 </script>
 <body>
