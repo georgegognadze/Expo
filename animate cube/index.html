@@ -113,6 +113,9 @@
         addControlGui(control);
         addStatsObject();
 
+        // add the output of the renderer to the html element
+        document.body.appendChild(renderer.domElement);
+
     }
 </script>
 <body>
