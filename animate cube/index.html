@@ -119,8 +119,15 @@
         // call the render function, after the first render, interval is determined
         // by requestAnimationFrame
         render();
-
     }
+
+    function takeStepRight(cube, start, end, time) {
+        var cubeGeometry = cube.geometry;
+        var widht = 4;
+        if (!isTweening) {
+            var tween = new TWEEN.Tween({ x: start, cube: cube, previous: 0})
+                    .to({ x: end }, time )    
+
 </script>
 <body>
 </body>
