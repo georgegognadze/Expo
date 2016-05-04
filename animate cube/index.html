@@ -146,6 +146,12 @@
                         cube.position.z += widht / 2;
                         cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, widht / 2, -widht / 2));
                     })
+                    .onUpdate(function () {
+                        cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(this.x - this.previous));
+                        cube.geometry.verticesNeedUpdate = true;
+                        cube.geometry.normalsNeedUpdate = true;
+                        this.previous = this.x;
+                    })
 </script>
 <body>
 </body>
