@@ -156,6 +156,11 @@
                         cube.position.y += 2;
                         cube.position.z += 2;
                         cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, -widht / 2, -widht / 2));
+                        cube.position.x = Math.round(cube.position.x);
+                        cube.position.y = Math.round(cube.position.y);
+                        cube.position.z = Math.round(cube.position.z);
+                        isTweening = false;
+                    })
 </script>
 <body>
 </body>
