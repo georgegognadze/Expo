@@ -195,9 +195,17 @@
         stats.update();
 
         TWEEN.update();
+        
+        // and render the scene
+        renderer.render(scene, camera);
+
+        // render using requestAnimationFrame
+        requestAnimationFrame(render);
+
+
     }
 
-    
+
 </script>
 <body>
 </body>
