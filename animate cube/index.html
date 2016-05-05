@@ -164,6 +164,13 @@
                     .start();
         }
     }
+
+    function addControlGui(controlObject) {
+        var gui = new dat.GUI();
+        gui.add(controlObject,'left');
+        gui.add(controlObject,'right');
+
+    }
 </script>
 <body>
 </body>
