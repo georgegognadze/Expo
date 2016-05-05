@@ -183,6 +183,20 @@
 
         document.body.appendChild( stats.domElement );
     }
+
+
+    /**
+     * Called when the scene needs to be rendered. Delegates to requestAnimationFrame
+     * for future renders
+     */
+    function render() {
+
+        // update stats
+        stats.update();
+
+        TWEEN.update();
+    }
+
     
 </script>
 <body>
