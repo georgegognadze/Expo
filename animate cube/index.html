@@ -195,15 +195,16 @@
         stats.update();
 
         TWEEN.update();
-        
+
         // and render the scene
         renderer.render(scene, camera);
 
         // render using requestAnimationFrame
         requestAnimationFrame(render);
-
-
     }
+
+    // calls the init function when the window is done loading.
+    window.onload = init;
 
 
 </script>
