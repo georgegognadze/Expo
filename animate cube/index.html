@@ -205,6 +205,18 @@
                         cube.previous = this.x;
                         this.previous = this.x;
                     } )
+                    .onComplete(function() {
+                        cube.position.y+=2;
+                        cube.position.x+=2;
+
+                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( -widht/2, -widht/2, 0 ) );
+
+                        cube.position.x=Math.round(cube.position.x);
+                        cube.position.y=Math.round(cube.position.y);
+                        cube.position.z=Math.round(cube.position.z);
+
+                        isTweening = false;
+                    })
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
