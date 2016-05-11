@@ -238,6 +238,9 @@
                         cube.position.x+=-widht/2;
                         cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( widht/2,  widht/2, 0 ) );
                     })
+                        .onUpdate( function () {
+                        cube.geometry.applyMatrix( new THREE.Matrix4().makeRotationZ( (this.x-this.previous) ) );
+
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
