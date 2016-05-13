@@ -247,6 +247,9 @@
                         cube.previous = this.x;
                         this.previous = this.x;
                     } )
+                        .onComplete(function() {
+                        cube.position.y+=widht/2;
+                        cube.position.x+=-widht/2;
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
