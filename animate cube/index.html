@@ -241,6 +241,12 @@
                         .onUpdate( function () {
                         cube.geometry.applyMatrix( new THREE.Matrix4().makeRotationZ( (this.x-this.previous) ) );
 
+                        cube.geometry.verticesNeedUpdate=true;
+                        cube.geometry.normalsNeedUpdate = true;
+
+                        cube.previous = this.x;
+                        this.previous = this.x;
+                    } )
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
