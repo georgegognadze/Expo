@@ -252,6 +252,11 @@
                         cube.position.x+=-widht/2;
                         cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( widht/2, -widht/2, 0 ) );
 
+                        cube.position.x=Math.round(cube.position.x);
+                        cube.position.y=Math.round(cube.position.y);
+                        cube.position.z=Math.round(cube.position.z);
+                    }
+
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
         gui.add(controlObject,'back');
