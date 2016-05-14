@@ -255,7 +255,10 @@
                         cube.position.x=Math.round(cube.position.x);
                         cube.position.y=Math.round(cube.position.y);
                         cube.position.z=Math.round(cube.position.z);
-                    }
+                     isTweening = false;
+                    })
+                    .start();
+                }
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
