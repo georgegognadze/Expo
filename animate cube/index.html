@@ -258,10 +258,12 @@
                      isTweening = false;
                     })
                     .start();
-                }
+        }
+    }
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
+        gui.add(controlObject,'forward');
         gui.add(controlObject,'back');
         gui.add(controlObject,'left');
         gui.add(controlObject,'right');
