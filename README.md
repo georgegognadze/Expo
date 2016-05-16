@@ -14,5 +14,6 @@
 <li> <a href="http://adv3dgeo.bitballoon.com/" target="_blank"> Advanced 3D geometries</a> - using Three.js  </li> 
 <li> <a href="http://generatecube.bitballoon.com/" target="_blank"> Generate Cube</a> - using Three.js  </li>
 <li> <a href="http://ambientlight.bitballoon.com/" target="_blank"> Ambient Light</a> - using Three.js  </li>
+<li> <a href="http://animatecube.bitballoon.com/" target="_blank"> Animate Cube </a> - using Three.js  </li>
 </ol>
 More projects coming soon as time goes by :octocat:
