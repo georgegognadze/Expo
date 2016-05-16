@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Animate a cube</title>
     <script src="js/three.js"></script>
@@ -15,7 +16,6 @@
     </style>
 </head>
 <script>
-
     // global variables
     var renderer;
     var scene;
@@ -28,7 +28,11 @@
     function createCube() {
 
         var cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
-        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000, transparent: true, opacity: 0.6});
+        var cubeMaterial = new THREE.MeshLambertMaterial({
+            color: 0xff0000,
+            transparent: true,
+            opacity: 0.6
+        });
         var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
         cube.castShadow = true;
         cube.name = 'cube';
@@ -56,7 +60,9 @@
 
         // create the ground plane
         var planeGeometry = new THREE.PlaneGeometry(120, 120, 20, 20);
-        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
+        var planeMaterial = new THREE.MeshLambertMaterial({
+            color: 0xcccccc
+        });
         var plane = new THREE.Mesh(planeGeometry, planeMaterial);
         plane.receiveShadow = true;
 
@@ -87,24 +93,24 @@
         scene.add(spotLight);
 
         // setup the control object for the control gui
-        control = new function () {
+        control = new function() {
             this.rotationSpeed = 0.005;
             this.opacity = 0.6;
             this.color = cube.material.color.getHex();
 
-            this.forward = function () {
+            this.forward = function() {
                 takeStepForward(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
             };
 
-            this.back = function () {
+            this.back = function() {
                 takeStepBackward(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
             };
 
-            this.left = function () {
+            this.left = function() {
                 takeStepLeft(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
             };
 
-            this.right = function () {
+            this.right = function() {
                 takeStepRight(scene.getObjectByName('cube'), 0, 0.5 * Math.PI, 2000);
             };
         };
@@ -127,21 +133,27 @@
         var cubeGeometry = cube.geometry;
         var widht = 4;
         if (!isTweening) {
-            var tween = new TWEEN.Tween({ x: start, cube: cube, previous: 0})
-                    .to({ x: end }, time )  
+            var tween = new TWEEN.Tween({
+                    x: start,
+                    cube: cube,
+                    previous: 0
+                })
+                .to({
+                    x: end
+                }, time)
                 .easing(TWEEN.Easing.Linear.None)
-                .onStart(function () {
+                .onStart(function() {
                     cube.position.y += -widht / 2;
                     cube.position.z += -widht / 2;
                     cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, widht / 2, widht / 2));
                 })
-                .onUpdate(function () {
+                .onUpdate(function() {
                     cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-(this.x - this.previous)));
                     cube.geometry.verticesNeedUpdate = true;
                     cube.geometry.normalsNeedUpdate = true;
                     this.previous = this.x;
                 })
-                .onComplete(function () {
+                .onComplete(function() {
                     cube.position.y += 2;
                     cube.position.z += -2;
                     cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, -widht / 2, widht / 2));
@@ -153,35 +165,42 @@
                 .start();
         }
     }
+
     function takeStepLeft(cube, start, end, time) {
         var cubeGeometry = cube.geometry;
         var widht = 4;
         if (!isTweening) {
-            var tween = new TWEEN.Tween({ x: start, cube: cube, previous: 0})
-                    .to({ x: end }, time )
-                    .easing(TWEEN.Easing.Linear.None)
-                    .onStart(function () {
-                        isTweening = true;
-                        cube.position.y += -widht / 2;
-                        cube.position.z += widht / 2;
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, widht / 2, -widht / 2));
-                    })
-                    .onUpdate(function () {
-                        cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(this.x - this.previous));
-                        cube.geometry.verticesNeedUpdate = true;
-                        cube.geometry.normalsNeedUpdate = true;
-                        this.previous = this.x;
-                    })
-                    .onComplete(function () {
-                        cube.position.y += 2;
-                        cube.position.z += 2;
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, -widht / 2, -widht / 2));
-                        cube.position.x = Math.round(cube.position.x);
-                        cube.position.y = Math.round(cube.position.y);
-                        cube.position.z = Math.round(cube.position.z);
-                        isTweening = false;
-                    })
-                    .start();
+            var tween = new TWEEN.Tween({
+                    x: start,
+                    cube: cube,
+                    previous: 0
+                })
+                .to({
+                    x: end
+                }, time)
+                .easing(TWEEN.Easing.Linear.None)
+                .onStart(function() {
+                    isTweening = true;
+                    cube.position.y += -widht / 2;
+                    cube.position.z += widht / 2;
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, widht / 2, -widht / 2));
+                })
+                .onUpdate(function() {
+                    cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(this.x - this.previous));
+                    cube.geometry.verticesNeedUpdate = true;
+                    cube.geometry.normalsNeedUpdate = true;
+                    this.previous = this.x;
+                })
+                .onComplete(function() {
+                    cube.position.y += 2;
+                    cube.position.z += 2;
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, -widht / 2, -widht / 2));
+                    cube.position.x = Math.round(cube.position.x);
+                    cube.position.y = Math.round(cube.position.y);
+                    cube.position.z = Math.round(cube.position.z);
+                    isTweening = false;
+                })
+                .start();
         }
     }
 
@@ -190,36 +209,42 @@
         var cubeGeometry = cube.geometry;
 
         if (!isTweening) {
-            var tween = new TWEEN.Tween( { x: start, cube: cube, previous: 0} )
-                    .to( { x: end }, time )
-                    .easing( TWEEN.Easing.Linear.None )
-                    .onStart( function() {
+            var tween = new TWEEN.Tween({
+                    x: start,
+                    cube: cube,
+                    previous: 0
+                })
+                .to({
+                    x: end
+                }, time)
+                .easing(TWEEN.Easing.Linear.None)
+                .onStart(function() {
 
-                        isTweening = true;
-                        cube.position.y+=-widht/2;
-                        cube.position.x+=widht/2;
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( -widht/2,  widht/2, 0 ) );
-                    })
-                    .onUpdate( function () {
-                        cube.geometry.applyMatrix( new THREE.Matrix4().makeRotationZ( -(this.x-this.previous) ) );
-                        cube.geometry.verticesNeedUpdate=true;
-                        cube.geometry.normalsNeedUpdate = true;
-                        cube.previous = this.x;
-                        this.previous = this.x;
-                    } )
-                    .onComplete(function() {
-                        cube.position.y+=2;
-                        cube.position.x+=2;
+                    isTweening = true;
+                    cube.position.y += -widht / 2;
+                    cube.position.x += widht / 2;
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(-widht / 2, widht / 2, 0));
+                })
+                .onUpdate(function() {
+                    cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationZ(-(this.x - this.previous)));
+                    cube.geometry.verticesNeedUpdate = true;
+                    cube.geometry.normalsNeedUpdate = true;
+                    cube.previous = this.x;
+                    this.previous = this.x;
+                })
+                .onComplete(function() {
+                    cube.position.y += 2;
+                    cube.position.x += 2;
 
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( -widht/2, -widht/2, 0 ) );
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(-widht / 2, -widht / 2, 0));
 
-                        cube.position.x=Math.round(cube.position.x);
-                        cube.position.y=Math.round(cube.position.y);
-                        cube.position.z=Math.round(cube.position.z);
+                    cube.position.x = Math.round(cube.position.x);
+                    cube.position.y = Math.round(cube.position.y);
+                    cube.position.z = Math.round(cube.position.z);
 
-                        isTweening = false;
-                    })
-                    .start();
+                    isTweening = false;
+                })
+                .start();
         }
     }
 
@@ -227,46 +252,52 @@
         var widht = 4;
         var cubeGeometry = cube.geometry;
 
-        
+
         if (!isTweening) {
-            var tween = new TWEEN.Tween( { x: start, cube: cube, previous: 0} )
-                    .to( { x: end }, time )
-                    .easing( TWEEN.Easing.Linear.None )
-                    .onStart( function() {
-                        isTweening = true;
-                        cube.position.y+=-widht/2;
-                        cube.position.x+=-widht/2;
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( widht/2,  widht/2, 0 ) );
-                    })
-                        .onUpdate( function () {
-                        cube.geometry.applyMatrix( new THREE.Matrix4().makeRotationZ( (this.x-this.previous) ) );
+            var tween = new TWEEN.Tween({
+                    x: start,
+                    cube: cube,
+                    previous: 0
+                })
+                .to({
+                    x: end
+                }, time)
+                .easing(TWEEN.Easing.Linear.None)
+                .onStart(function() {
+                    isTweening = true;
+                    cube.position.y += -widht / 2;
+                    cube.position.x += -widht / 2;
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(widht / 2, widht / 2, 0));
+                })
+                .onUpdate(function() {
+                    cube.geometry.applyMatrix(new THREE.Matrix4().makeRotationZ((this.x - this.previous)));
 
-                        cube.geometry.verticesNeedUpdate=true;
-                        cube.geometry.normalsNeedUpdate = true;
+                    cube.geometry.verticesNeedUpdate = true;
+                    cube.geometry.normalsNeedUpdate = true;
 
-                        cube.previous = this.x;
-                        this.previous = this.x;
-                    } )
-                        .onComplete(function() {
-                        cube.position.y+=widht/2;
-                        cube.position.x+=-widht/2;
-                        cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation( widht/2, -widht/2, 0 ) );
+                    cube.previous = this.x;
+                    this.previous = this.x;
+                })
+                .onComplete(function() {
+                    cube.position.y += widht / 2;
+                    cube.position.x += -widht / 2;
+                    cubeGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(widht / 2, -widht / 2, 0));
 
-                        cube.position.x=Math.round(cube.position.x);
-                        cube.position.y=Math.round(cube.position.y);
-                        cube.position.z=Math.round(cube.position.z);
-                     isTweening = false;
-                    })
-                    .start();
+                    cube.position.x = Math.round(cube.position.x);
+                    cube.position.y = Math.round(cube.position.y);
+                    cube.position.z = Math.round(cube.position.z);
+                    isTweening = false;
+                })
+                .start();
         }
     }
 
     function addControlGui(controlObject) {
         var gui = new dat.GUI();
-        gui.add(controlObject,'forward');
-        gui.add(controlObject,'back');
-        gui.add(controlObject,'left');
-        gui.add(controlObject,'right');
+        gui.add(controlObject, 'forward');
+        gui.add(controlObject, 'back');
+        gui.add(controlObject, 'left');
+        gui.add(controlObject, 'right');
 
     }
 
@@ -279,7 +310,7 @@
         stats.domElement.style.left = '0px';
         stats.domElement.style.top = '0px';
 
-        document.body.appendChild( stats.domElement );
+        document.body.appendChild(stats.domElement);
     }
 
 
@@ -315,8 +346,9 @@
     window.onload = init;
     // listen to the resize events
     window.addEventListener('resize', onResize, false);
-
 </script>
+
 <body>
 </body>
+
 </html>
