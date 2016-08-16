@@ -33,6 +33,7 @@
 
       // get your system time
       function initTime() {
+      	
       date = new Date();
       hours = date.getHours() % 12;
       minutes = date.getMinutes();
@@ -42,6 +43,9 @@
 
       // animate the clock
       function animateClock() {
+
+      clearCanvas();
+      refreshTime();
 
       }
 
