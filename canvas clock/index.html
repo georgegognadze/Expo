@@ -59,6 +59,7 @@
       function refreshTime() {
       seconds += 1;
       if (Math.floor((seconds / 60)) != 0) { minutes += 1; seconds %= 60; }
+      if (Math.floor((minutes / 60)) != 0) { hours += 1; minutes %= 60; }
       }
 
 
