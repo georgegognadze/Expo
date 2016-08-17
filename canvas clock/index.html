@@ -58,6 +58,7 @@
       // refresh time after 1 second
       function refreshTime() {
       seconds += 1;
+      if (Math.floor((seconds / 60)) != 0) { minutes += 1; seconds %= 60; }
       }
 
 
