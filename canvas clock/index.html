@@ -20,7 +20,7 @@
       canvas = document.getElementById("myclock");
       canvasElement = canvas.getContext("2d");
 
-	  cX = canvas.width / 2;
+	   cX = canvas.width / 2;
       cY = canvas.height / 2;
 
       initTime();
@@ -55,7 +55,11 @@
       canvasElement.clearRect(0, 0, canvas.width, canvas.height);
       }
 
-      
+      // refresh time after 1 second
+      function refreshTime() {
+      seconds += 1;
+      }
+
 
     </script>
 </head>
