@@ -74,7 +74,8 @@
 
       function drawHand(beginX, beginY, endX, endY) {
       canvasElement.beginPath();
-
+      canvasElement.moveTo(beginX, beginY);
+      canvasElement.lineTo(endX, endY);
       }
 
     </script>
