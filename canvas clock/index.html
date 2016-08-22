@@ -106,7 +106,10 @@
       var rotationFactor = Math.PI / 30;
       var rotation = rotationUnit*rotationFactor;
       var handLength = 0.4*radius;
-      
+
+
+      endX = cX + handLength*Math.sin(rotation);
+      endY = cY - handLength*Math.cos(rotation);      
 
       }
 
