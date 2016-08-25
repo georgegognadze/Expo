@@ -126,6 +126,8 @@
       for (var i=0; i < repeat; i+=1) {
       angle_current_position_begin = angle_initial_position - (i * shift_factor) - correction;
       angle_current_position_end = angle_current_position_begin + shift_unit;
+
+      if (i % 5 == 0) lineWidth = 20;
             
       }            
       }
