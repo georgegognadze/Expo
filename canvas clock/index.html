@@ -141,6 +141,7 @@
       function drawArcAtPosition(cX, cY, radius, start_angle, end_angle, counterclockwise, lineWidth) {
       canvasElement.beginPath();
       canvasElement.arc(cX, cY, radius, start_angle, end_angle, counterclockwise);
+      canvasElement.lineWidth = lineWidth;
 
       }
 
