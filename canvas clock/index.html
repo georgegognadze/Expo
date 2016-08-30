@@ -1,159 +1,164 @@
 <head>
-   <script type="text/javascript">
-	   var canvas;
-	   var canvasElement;
+    <script type="text/javascript">
+        var canvas;
+        var canvasElement;
 
-	   // clock settings
-	   var cX = 0;
+        // clock settings
+        var cX = 0;
 
-	   var cY = 0;
-	   var radius = 150;
+        var cY = 0;
+        var radius = 150;
 
-	   // time settings
-	   var date;
-	   var hours;
-	   var minutes;
-	   var seconds;
+        // time settings
+        var date;
+        var hours;
+        var minutes;
+        var seconds;
 
-      function init() {
+        function init() {
 
-      canvas = document.getElementById("myclock");
-      canvasElement = canvas.getContext("2d");
+            canvas = document.getElementById("myclock");
+            canvasElement = canvas.getContext("2d");
 
-	   cX = canvas.width / 2;
-      cY = canvas.height / 2;
+            cX = canvas.width / 2;
+            cY = canvas.height / 2;
 
-      initTime();
-      drawClock();
+            initTime();
+            drawClock();
 
-      setInterval("animateClock()", 1000);
+            setInterval("animateClock()", 1000);
 
-      }	   
+        }
 
+        // get your system time
+        function initTime() {
 
-      // get your system time
-      function initTime() {
-      	
-      date = new Date();
-      hours = date.getHours() % 12;
-      minutes = date.getMinutes();
-      seconds = date.getSeconds();     
+            date = new Date();
+            hours = date.getHours() % 12;
+            minutes = date.getMinutes();
+            seconds = date.getSeconds();
 
-      }
+        }
 
-      // animate the clock
-      function animateClock() {
+        // animate the clock
+        function animateClock() {
 
-      clearCanvas();
-      refreshTime();
-      drawClock();
+            clearCanvas();
+            refreshTime();
+            drawClock();
 
-      }
+        }
 
-      // clear the canvas
-      function clearCanvas() {
-      canvasElement.clearRect(0, 0, canvas.width, canvas.height);
-      }
+        // clear the canvas
+        function clearCanvas() {
+            canvasElement.clearRect(0, 0, canvas.width, canvas.height);
+        }
 
-      // refresh time after 1 second
-      function refreshTime() {
-      seconds += 1;
-      if (Math.floor((seconds / 60)) != 0) { minutes += 1; seconds %= 60; }
-      if (Math.floor((minutes / 60)) != 0) { hours += 1; minutes %= 60; }
-      }
+        // refresh time after 1 second
+        function refreshTime() {
+            seconds += 1;
+            if (Math.floor((seconds / 60)) != 0) {
+                minutes += 1;
+                seconds %= 60;
+            }
+            if (Math.floor((minutes / 60)) != 0) {
+                hours += 1;
+                minutes %= 60;
+            }
+        }
 
+        // draw or redraw Clock after time refresh function is called
+        function drawClock() {
+            drawClockBackground();
+            drawSecondsHand();
+            drawMinutesHand();
+            drawHoursHand();
+        }
 
-      // draw or redraw Clock after time refresh function is called
-      function drawClock() {
-                        drawClockBackground();
-                        drawSecondsHand();
-                        drawMinutesHand();
-                        drawHoursHand();                       
+        function drawHand(beginX, beginY, endX, endY) {
+            canvasElement.beginPath();
+            canvasElement.moveTo(beginX, beginY);
+            canvasElement.lineTo(endX, endY);
+            canvasElement.stroke();
+            canvasElement.closePath();
+        }
 
-      }
-
-      function drawHand(beginX, beginY, endX, endY) {
-      canvasElement.beginPath();
-      canvasElement.moveTo(beginX, beginY);
-      canvasElement.lineTo(endX, endY);
-      canvasElement.stroke();
-      canvasElement.closePath();
-      }
-
-      // draw Hand for seconds
-      function drawSecondsHand() {
-      endX = cX + radius*Math.sin(seconds*Math.PI / 30);
-      endY = cY - radius*Math.cos(seconds*Math.PI / 30);
-      drawHand(cX, cY, endX, endY);
-      }
-
-      // draw Hand for minutes
-      function drawMinutesHand() {
-      var rotationUnit = minutes + seconds / 60;
-      var rotationFactor = Math.PI / 30;
-      var rotation = rotationUnit*rotationFactor;     
-      var handLength = 0.8*radius;
-      
-
-      endX = cX + handLength*Math.sin(rotation);
-      endY = cY - handLength*Math.cos(rotation);
-      drawHand(cX, cY, endX, endY);
-      }
-
-      // draw Hand for hours
-      function drawHoursHand() {
-      var rotationUnit = 5 * hours + minutes / 12;
-      var rotationFactor = Math.PI / 30;
-      var rotation = rotationUnit*rotationFactor;
-      var handLength = 0.4*radius;
+        // draw Hand for seconds
+        function drawSecondsHand() {
+            endX = cX + radius * Math.sin(seconds * Math.PI / 30);
+            endY = cY - radius * Math.cos(seconds * Math.PI / 30);
+            drawHand(cX, cY, endX, endY);
+        }
 
 
-      endX = cX + handLength*Math.sin(rotation);
-      endY = cY - handLength*Math.cos(rotation);      
-      drawHand(cX, cY, endX, endY);
-      }
+        // draw Hand for minutes
+        function drawMinutesHand() {
+            var rotationUnit = minutes + seconds / 60;
+            var rotationFactor = Math.PI / 30;
+            var rotation = rotationUnit * rotationFactor;
+            var handLength = 0.8 * radius;
 
-      function drawClockBackground() {
-      var correction = 1/300;
-      var shift_unit = 1/170;
-      var shift_factor = 1/30;
-      var angle_initial_position = 2;
-      var angle_current_position_begin = 0;
-      var angle_current_position_end = 0;
-      var repeat = 60;
-      var lineWidth = 10;
-      
-      for (var i=0; i < repeat; i+=1) {
-      angle_current_position_begin = angle_initial_position - (i * shift_factor) - correction;
-      angle_current_position_end = angle_current_position_begin + shift_unit;
+            endX = cX + handLength * Math.sin(rotation);
+            endY = cY - handLength * Math.cos(rotation);
+            drawHand(cX, cY, endX, endY);
+        }
 
-      if (i % 5 == 0) lineWidth = 20;
-      else lineWidth = 10;
-      
-      drawArcAtPosition(cX, cY, radius, angle_current_position_begin*Math.PI, angle_current_position_end*Math.PI, false, lineWidth);
+        // draw Hand for hours
+        function drawHoursHand() {
+            var rotationUnit = 5 * hours + minutes / 12;
+            var rotationFactor = Math.PI / 30;
+            var rotation = rotationUnit * rotationFactor;
+            var handLength = 0.4 * radius;
 
-      }    
+            endX = cX + handLength * Math.sin(rotation);
+            endY = cY - handLength * Math.cos(rotation);
+            drawHand(cX, cY, endX, endY);
+        }
 
-      drawLittleCircle(cX, cY);
+        function drawClockBackground() {
 
-      }
+            var correction = 1 / 300;
+            var shift_unit = 1 / 170;
+            var shift_factor = 1 / 30;
+            var angle_initial_position = 2;
+            var angle_current_position_begin = 0;
+            var angle_current_position_end = 0;
+            var repeat = 60;
+            var lineWidth = 10;
 
-      function drawArcAtPosition(cX, cY, radius, start_angle, end_angle, counterclockwise, lineWidth) {
-      canvasElement.beginPath();
-      canvasElement.arc(cX, cY, radius, start_angle, end_angle, counterclockwise);
-      canvasElement.lineWidth = lineWidth;
-      canvasElement.strokeStyle = "black";
-      canvasElement.stroke();
-      canvasElement.closePath();
-      }
+            for (var i = 0; i < repeat; i += 1) {
 
-      function drawLittleCircle(cX, cY) {
-      drawArcAtPosition(cX, cY, 4, 0*Math.PI, 2*Math.PI, false, 4);      
-      }
+                angle_current_position_begin = angle_initial_position - (i * shift_factor) - correction;
+                angle_current_position_end = angle_current_position_begin + shift_unit;
 
+                if (i % 5 == 0) lineWidth = 20;
+                else lineWidth = 10;
+
+                drawArcAtPosition(cX, cY, radius, angle_current_position_begin * Math.PI, angle_current_position_end * Math.PI, false, lineWidth);
+
+            }
+
+            drawLittleCircle(cX, cY);
+
+        }
+
+        function drawArcAtPosition(cX, cY, radius, start_angle, end_angle, counterclockwise, lineWidth) {
+            canvasElement.beginPath();
+            canvasElement.arc(cX, cY, radius, start_angle, end_angle, counterclockwise);
+            canvasElement.lineWidth = lineWidth;
+            canvasElement.strokeStyle = "black";
+            canvasElement.stroke();
+            canvasElement.closePath();
+        }
+
+        function drawLittleCircle(cX, cY) {
+            drawArcAtPosition(cX, cY, 4, 0 * Math.PI, 2 * Math.PI, false, 4);
+        }
     </script>
 </head>
+
 <body onload="init()">
-   <canvas id="myclock" height="500" width="500"></canvas>
+    <canvas id="myclock" height="500" width="500"></canvas>
 </body>
+
 </html>
