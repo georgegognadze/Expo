@@ -451,6 +451,9 @@ function Player(query) {
   var minLeft = 0 - parseInt(element.offsetWidth / 2);
   var maxLeft = trackWidth - parseInt(element.offsetWidth / 2);
   
+  function getLeft() {
+    return parseInt(element.style.left);
+  }  
 
 }
 
