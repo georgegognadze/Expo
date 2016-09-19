@@ -475,6 +475,11 @@ if (getLeft() > maxLeft) {
       this.moveToStart();
     }
   };    
+
+  this.moveToPercent = function(percent) {
+    element.style.left = parseInt(percent * maxLeft) + "px";
+    
+    }  
     
   }
 
