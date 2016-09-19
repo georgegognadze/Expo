@@ -466,6 +466,8 @@ function Player(query) {
   this.move = function() {
     var left = getLeft();
     var speed = parseInt(element.attributes.getNamedItem("data-speed").value);
+
+    element.style.left = (left + speed) + "px";
     
     
   }
