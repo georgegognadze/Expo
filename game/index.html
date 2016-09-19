@@ -468,7 +468,13 @@ function Player(query) {
     var speed = parseInt(element.attributes.getNamedItem("data-speed").value);
 
     element.style.left = (left + speed) + "px";
-    
+
+if (getLeft() > maxLeft) {
+      this.moveToFinish();
+    } else if (getLeft() < minLeft) {
+      this.moveToStart();
+    }
+  };    
     
   }
 
