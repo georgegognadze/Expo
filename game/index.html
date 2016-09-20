@@ -469,17 +469,22 @@ function Player(query) {
 
     element.style.left = (left + speed) + "px";
 
-if (getLeft() > maxLeft) {
-      this.moveToFinish();
-    } else if (getLeft() < minLeft) {
-      this.moveToStart();
-    }
-  };    
+    if (getLeft() > maxLeft) {
+          this.moveToFinish();
+        } else if (getLeft() < minLeft) {
+          this.moveToStart();
+        }
+      };    
 
   this.moveToPercent = function(percent) {
     element.style.left = parseInt(percent * maxLeft) + "px";
-    
-    }  
+
+    if (percent >= 100) {
+          this.moveToFinish();
+        } else if (percent <= 0) {
+          this.moveToStart();
+        }    
+    };  
     
   }
 
