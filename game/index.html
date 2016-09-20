@@ -484,7 +484,11 @@ function Player(query) {
         } else if (percent <= 0) {
           this.moveToStart();
         }    
-    };  
+    };
+
+  this.isFinished = function() {
+    return parseInt(element.style.left) >= maxLeft;
+  };      
     
   }
 
