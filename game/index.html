@@ -492,6 +492,10 @@ function Player(query) {
 
   this.moveToStart = function() {
     element.style.left = this.getMinLeft() + "px";
+  };
+
+  this.moveToFinish = function() {
+    element.style.left = this.getMaxLeft() + "px";
   };      
     
   }
