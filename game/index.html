@@ -496,7 +496,11 @@ function Player(query) {
 
   this.moveToFinish = function() {
     element.style.left = this.getMaxLeft() + "px";
-  };      
+  };  
+
+  this.setSpeed = function(speed) {
+    return element.attributes.getNamedItem("data-speed").value = speed;
+  };    
     
   }
 
