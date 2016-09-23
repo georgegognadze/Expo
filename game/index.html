@@ -515,6 +515,9 @@ var wordsWritten = document.querySelector("#wordsWritten");
 var words = "";
 var currentLetter = 0;
 
+function isGameOver() {
+  return hero.isFinished() || enemy.isFinished();
+}
 
 }
 
