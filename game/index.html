@@ -525,7 +525,10 @@ function tick() {
     if (isGameOver()) {
       document.body.removeEventListener("keydown", handleKeyPress);
     
-      
+    if (hero.isFinished()) {
+        gamesWon++;
+    
+    }  
     }
 }
 }
