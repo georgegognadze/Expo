@@ -523,6 +523,9 @@ function tick() {
   hero.move();
   enemy.move();
     if (isGameOver()) {
+      document.body.removeEventListener("keydown", handleKeyPress);
+    
+      
     }
 }
 }
