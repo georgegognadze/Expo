@@ -527,8 +527,11 @@ function tick() {
     
     if (hero.isFinished()) {
         gamesWon++;
-    
-    }  
+        showWinPanel();    
+    } else if (enemy.isFinished()) {
+      showLosePanel();
+
+    } 
     }
 }
 }
