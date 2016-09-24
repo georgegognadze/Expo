@@ -530,10 +530,10 @@ function tick() {
         showWinPanel();    
     } else if (enemy.isFinished()) {
       showLosePanel();
-
     } 
-    }
-}
+  } else {
+    setTimeout(tick, tickPeriod);
+  }
 }
 
   </script>
