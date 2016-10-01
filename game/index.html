@@ -588,8 +588,10 @@ function saveNewChampion(event) {
 
   var newChampion = document.createElement("li");
   newChampion.innerHTML = "<p>#" + rank + "</p>" +
+                          "<p>" + name + " " + stars + "</p>" +
+                          "<p><a href='mailto:" + email + "'>" + email + "</a></p>";
 
-
+  champions.appendChild(newChampion);
 }
 
   </script>
