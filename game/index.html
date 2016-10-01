@@ -583,6 +583,9 @@ function saveNewChampion(event) {
   for (var i = 0; i < difficulty; i++)
     stars += "*";
 
+  if (rank > gamesWon)
+    return false;
+
 
 }
 
