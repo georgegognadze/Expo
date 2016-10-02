@@ -603,9 +603,12 @@ function handleKeyPress(event) {
   var wordsLen = wordsWritten.children.length;
   if (event.keyCode == 16)
     return false;
-  
+
   if (event.keyCode == 8) {
     event.preventDefault();
+    
+    if (wordsLen < 1)
+      return false;
 }  
 
   </script>
