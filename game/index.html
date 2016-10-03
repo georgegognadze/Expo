@@ -619,6 +619,8 @@ function handleKeyPress(event) {
   if (!event.shiftKey && event.keyCode >= 65 && event.keyCode <= 90)   
       letter = String.fromCharCode(event.keyCode + 32);
 
+  if (event.keyCode == 188)
+    letter = ",";
 
   </script>
 
