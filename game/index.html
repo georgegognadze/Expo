@@ -609,10 +609,13 @@ function handleKeyPress(event) {
     
     if (wordsLen < 1)
       return false;
-    
+
     wordsWritten.children[wordsLen - 1].remove();
     return false;    
-}  
+  }  
+
+  var letter = String.fromCharCode(event.keyCode);
+
 
   </script>
 
