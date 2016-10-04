@@ -621,9 +621,13 @@ function handleKeyPress(event) {
 
   if (event.keyCode == 188)
     letter = ",";
-  
+
    if (event.keyCode == 190)
     letter = "."; 
+  
+   if (letter == words[wordsLen]) {
+    wordsWritten.innerHTML += "<span class='correct'>" + letter + "</span>";
+    } 
 
   </script>
 
