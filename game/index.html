@@ -630,9 +630,9 @@ function handleKeyPress(event) {
     var correct = document.querySelectorAll("#wordsWritten .correct").length;
     var percent = correct / words.length;
     hero.moveToPercent(percent);
-
-
-    } 
+  } else {
+    wordsWritten.innerHTML += "<span class='wrong'>" + letter + "</span>";
+  } 
 
   </script>
 
