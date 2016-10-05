@@ -628,6 +628,8 @@ function handleKeyPress(event) {
    if (letter == words[wordsLen]) {
     wordsWritten.innerHTML += "<span class='correct'>" + letter + "</span>";
     var correct = document.querySelectorAll("#wordsWritten .correct").length;
+    var percent = correct / words.length;
+
 
     } 
 
