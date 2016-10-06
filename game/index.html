@@ -640,9 +640,12 @@ function getWords() {
   var phrases = [
       "The quick brown fox stopped being quick once its hunter started wearing chrome.",
       "People who type fast are more likely to win at this game. Yes, that is true.",
-      "For some reason, I think I can have fun while typing, and improving at the same time.",
- ];
-    }
+      "For some reason, I think I can have fun while typing, and improving at the same time."];
+   var rand = parseInt(Math.random() * phrases.length);
+
+   return phrases[rand];
+
+}
   </script>
 
 
