@@ -672,8 +672,11 @@ function doOnPlayClicked() {
   setEnemySpeed(difficulty.value);
   hero.setSpeed(0);
 
-
+  document.body.addEventListener("keydown", handleKeyPress);
+  setTimeout(tick, tickPeriod);
 }
+
+
 main();
   </script>
 
