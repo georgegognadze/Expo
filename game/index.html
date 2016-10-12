@@ -679,8 +679,10 @@ function doOnPlayClicked() {
 function main() {
   // Make options navigation toggle when clicked
   var options = document.querySelector("#navOptions img");
+  options.addEventListener("click", function(event) {
+    event.preventDefault();  
   }
-  
+
 main();
   </script>
 
