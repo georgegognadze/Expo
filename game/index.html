@@ -681,6 +681,9 @@ function main() {
   var options = document.querySelector("#navOptions img");
   options.addEventListener("click", function(event) {
     event.preventDefault();  
+
+    if (options.parentElement.classList.contains("open"))
+    
   }
 
 main();
