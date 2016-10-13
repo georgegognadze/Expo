@@ -684,8 +684,9 @@ function main() {
 
     if (options.parentElement.classList.contains("open"))
       options.parentElement.classList.remove("open");
-    
-  }
+    else
+      options.parentElement.classList.add("open");
+  });
 
 main();
   </script>
