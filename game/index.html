@@ -690,7 +690,9 @@ function main() {
 
   // Update difficulty value when slider changes
   var difficulty = document.querySelector("#navOptions input[type='range']");
-  
+  difficulty.addEventListener("change", function(event) {
+    event.preventDefault();
+      
 main();
   </script>
 
