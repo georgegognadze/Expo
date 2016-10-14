@@ -705,7 +705,9 @@ function main() {
 
   var playBtn = document.querySelectorAll("button[data-intent='play']");
 
-
+  for (var i = 0, len = playBtn.length; i < len; i++)
+    playBtn[i].addEventListener("click", doOnPlayClicked);
+  
 main();
   </script>
 
