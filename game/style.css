@@ -321,3 +321,9 @@ button {
         /* #225; */
     }
 }
+::selection {
+    background: #93cbcb;
+}
+::-moz-selection {
+    background: #93cbcb;
+}
