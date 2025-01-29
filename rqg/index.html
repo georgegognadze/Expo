@@ -1,20 +1,17 @@
 <html>
   <head>
     <title>Random Quotes</title>
-    <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic|Radley|Tangerine" rel="stylesheet">
-    <script type="text/javascript" src="js/jqueryy.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic|Radley|Tangerine" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
- <!-- You can use open graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
   <meta property="og:url"           content="http://rgq.bitballoon.com/" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Random Quotes Generator" />
   <meta property="og:description"   content="Check out Random Quotes site to get inspired" />
-  <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
   <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -31,95 +28,6 @@
     ga('create', 'UA-72303550-1', 'auto');
     ga('send', 'pageview');
 </script>
-  <!-- add google plus  -->
-<script src="https://apis.google.com/js/platform.js" async defer>
-  {parsetags: 'explicit'}
-</script>
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script type="async">window.twttr = (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function(f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));</script>
-<script type="text/javascript">
-    // Log any kind of Web Intent event to Google Analytics
-    // Category: "twitter_web_intents"
-    // Action: Intent Event Type
-    // Label: Identifier for action taken: tweet_id, screen_name/user_id, click region
-
-    // First, load the widgets.js file asynchronously
-    window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            t = window.twttr || {};
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-
-        t._e = [];
-        t.ready = function(f) {
-            t._e.push(f);
-        };
-
-        return t;
-    }(document, "script", "twitter-wjs"));
-
-    // Define our custom event handlers
-    function clickEventToAnalytics(intentEvent) {
-        if (!intentEvent) return;
-        var label = intentEvent.region;
-        pageTracker._trackEvent('twitter_web_intents', intentEvent.type, label);
-    }
-
-    function tweetIntentToAnalytics(intentEvent) {
-        if (!intentEvent) return;
-        var label = "tweet";
-        pageTracker._trackEvent(
-            'twitter_web_intents',
-            intentEvent.type,
-            label
-        );
-    }
-
-    function likeIntentToAnalytics(intentEvent) {
-        tweetIntentToAnalytics(intentEvent);
-    }
-
-    function retweetIntentToAnalytics(intentEvent) {
-        if (!intentEvent) return;
-        var label = intentEvent.data.source_tweet_id;
-        pageTracker._trackEvent(
-            'twitter_web_intents',
-            intentEvent.type,
-            label
-        );
-    }
-
-    function followIntentToAnalytics(intentEvent) {
-        if (!intentEvent) return;
-        var label = intentEvent.data.user_id + " (" + intentEvent.data.screen_name + ")";
-        pageTracker._trackEvent(
-            'twitter_web_intents',
-            intentEvent.type,
-            label
-        );
-    }
-
-    // Wait for the asynchronous resources to load
-    twttr.ready(function(twttr) {
-        // Now bind our custom intent events
-        twttr.events.bind('click', clickEventToAnalytics);
-        twttr.events.bind('tweet', tweetIntentToAnalytics);
-        twttr.events.bind('retweet', retweetIntentToAnalytics);
-        twttr.events.bind('like', likeIntentToAnalytics);
-        twttr.events.bind('follow', followIntentToAnalytics);
-    });
-</script>
-
 <h1>Random Quotes</h1>
 <br>
 <button class=button>New Quote <i class="fa fa-random"></i> (Press Space) </button>
@@ -128,84 +36,7 @@
 <div class="quote"><big>“ </big><span class="saying"></span><big>”</big>
 <br><span class="author"></span>
 <br> 
-<a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://rgq.bitballoon.com/" data-text="Check out this site and get inspired" data-via="GeorgeGognadze" data-hashtags="quotes">Tweet</a> 
-<div class="fb-share-button" data-href="http://rgq.bitballoon.com/" data-layout="button"></div>
-<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-<script type="IN/Share" data-url="http://rgq.bitballoon.com/"></script>
-<!-- Place this tag where you want the +1 button to render. --> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-<!-- <div class="g-plusone" style="height: 80px; width: 80px;" data-size="medium" href="https://plus.google.com/share?url=physicist-apparatus-44526.bitballoon.com/" data-annotation="none" data-width="80" data-recommendations="false"></div> -->
-<script>
-    ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');
-</script>
 </div>
-<a href="https://github.com/georgegognadze/Expo" class="github-corner">
-    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#538fbe; color:#fff; position: absolute; top: -668px; border: 0; right: -983px;">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-<style>
-    .github-corner:hover .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-    }
-    @keyframes octocat-wave {
-        0%, 100% {
-            transform: rotate(0)
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg)
-        }
-        40%,
-        80% {
-            transform: rotate(10deg)
-        }
-    }
-    @media (max-width: 500px) {
-        .github-corner:hover .octo-arm {
-            animation: none
-        }
-        .github-corner .octo-arm {
-            animation: octocat-wave 560ms ease-in-out
-        }
-    }
-</style>
 <br>
-<a href="https://twitter.com/GeorgeGognadze" class="twitter-follow-button" data-show-count="true">Follow @GeorgeGognadze</a> &nbsp;
-<div class="fb-like" data-href="https://rgq.bitballoon.com/" data-width="200" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div> &nbsp;
-<a class="github-button" href="https://github.com/georgegognadze" data-count-href="/georgegognadze/followers" data-count-api="/users/georgegognadze#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @georgegognadze on GitHub">Follow @georgegognadze</a>
-<!-- View my linkedin profile
-<a href="https://www.linkedin.com/pub/giorgi-gognadze/80/364/b66" style="padding-bottom: 167; padding-left: 452;">
-      
-          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png" width="160" height="25" border="0" alt="View Giorgi Gognadze's profile on LinkedIn">
-        
-    </a>
--->
-<!-- Place this render call where appropriate. -->
-<script type="text/javascript">gapi.plusone.go();</script>
-
-<script>
-    ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');
-</script>
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
