@@ -1,42 +1,22 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Quotes</title>
     <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic|Radley|Tangerine" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-  <meta property="og:url"           content="http://rgq.bitballoon.com/" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Random Quotes Generator" />
-  <meta property="og:description"   content="Check out Random Quotes site to get inspired" />
-  <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-72303550-1', 'auto');
-    ga('send', 'pageview');
-</script>
-<h1>Random Quotes</h1>
-<br>
-<button class=button>New Quote <i class="fa fa-random"></i> (Press Space) </button>
-<br>
-<br>
-<div class="quote"><big>“ </big><span class="saying"></span><big>”</big>
-<br><span class="author"></span>
-<br> 
-</div>
-<br>
+    <h1>Random Quotes</h1>
+    <button class="button">New Quote <i class="fa fa-random"></i> (Press Space)</button>
+    <div class="quote">
+        <big>“ </big><span class="saying"></span><big>”</big>
+        <br>
+        <span class="author"></span>
+    </div>
 </body>
 </html>
