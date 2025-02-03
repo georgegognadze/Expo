@@ -1,0 +1,105 @@
+body {
+    text-align: center;
+    background: #c44032;
+    size: border-box;
+}
+
+h1 {
+    font-family: Nosifer;
+    font-size: 70px;
+    margin: 0.2em;
+    letter-spacing: 7px;
+    color: #a8d1ff;
+    text-shadow:#863027 0.01em 0.01em 0,
+    #863027 0.02em 0.02em 0,
+    #863027 0.03em 0.03em 0,
+    #863027 0.04em 0.04em 0,
+    #863027 0.05em 0.05em 0,
+    #863027 0.06em 0.06em 0,
+    #863027 0.07em 0.07em 0,
+    #863027 0.08em 0.08em 0,
+    #863027 0.09em 0.09em 0,
+    #863027 0.1em 0.1em 0;
+}
+
+h1::selection {
+  color: red;
+}
+
+h2 {
+    font-family: Nosifer;
+    color: #8080f0;
+    margin: 1em 0 0.25em;
+    text-shadow:#863027 0.01em 0.01em 0,
+    #863027 0.02em 0.02em 0,
+    #863027 0.03em 0.03em 0,
+    #863027 0.04em 0.04em 0,
+    #863027 0.05em 0.05em 0,
+    #863027 0.06em 0.06em 0,
+    #863027 0.07em 0.07em 0,
+    #863027 0.08em 0.08em 0,
+    #863027 0.09em 0.09em 0,
+    #863027 0.1em 0.1em 0;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
+table,
+tr,
+td {
+    border: 2px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    cursor: crosshair;
+    background-color: white;
+    border: dotted;
+}
+
+tr {
+    height: 20px;
+}
+
+td:hover {
+     background-color: #F08080;
+}
+
+td {
+    width: 20px;
+}
+
+input[type=number] {
+    width: 4em;
+}
+
+input::selection {
+  color: red;
+}
+
+#sizePicker {
+    color: #8080f0;
+    font-weight: 600;
+}
+
+#clearGrid {
+  margin-left: -35px;
+  margin-bottom: 10px;
+  background-color: #a8d1ff;
+  outline: none;
+}
+
+#clearGrid:hover {
+  background-color: white;
+}
+
+::selection {
+  color: yellow;
+}
+
+::moz-selection {
+    color: yellow;
+};
